@@ -1,0 +1,1065 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="theme-color" content="#0038e0">
+    
+    <title>Criação de Sites Profissionais para Farmácias em Porto Alegre RS | ESTAIDA</title>
+    <meta name="description" content="Criação de Sites Profissionais para Farmácias em Porto Alegre RS. Design moderno, otimizado para Google e alta conversão. Solicite orçamento grátis!">
+    <meta name="keywords" content="site para farmacias, criação de sites Porto Alegre, Farmácias porto-alegre, agência digital porto-alegre">
+    <meta name="author" content="ESTAIDA">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://estaiada.site/porto-alegre/farmacias.html">
+    
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://estaiada.site/porto-alegre/farmacias.html">
+    <meta property="og:title" content="Sites para Farmácias em Porto Alegre | ESTAIDA">
+    <meta property="og:description" content="Criação de sites profissionais para Farmácias em Porto Alegre. Design moderno e otimizado.">
+    <meta property="og:image" content="https://estaiada.site/assets/img/og-image.jpg">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Sites para Farmácias em Porto Alegre">
+    <meta name="twitter:description" content="Sites profissionais para Farmácias em Porto Alegre.">
+    <meta name="twitter:image" content="https://estaiada.site/assets/img/twitter-card.jpg">
+    
+    <!-- JSON-LD Schema (será atualizado dinamicamente com config.js) -->
+    <script type="application/ld+json" id="schema-org-data">
+    {
+      "@context": "https://schema.org",
+      "@type": "ProfessionalService",
+      "name": "ESTAIDA - Sites para Farmácias em Porto Alegre",
+      "description": "Criação de sites profissionais para Farmácias em Porto Alegre RS",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Porto Alegre",
+        "addressRegion": "RS",
+        "addressCountry": "BR"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "-30.0346",
+        "longitude": "-51.2177"
+      },
+      "url": "https://estaiada.site/porto-alegre/farmacias.html",
+      "priceRange": "$$",
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "5",
+        "reviewCount": "150"
+      }
+    }
+    </script>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <script src="../config.js"></script>
+    <script>
+        // Função para atualizar dados do config.js
+        function atualizarDadosConfig() {
+            // Aguardar config.js carregar (tentar até 10 vezes)
+            var tentativas = 0;
+            var intervalo = setInterval(function() {
+                tentativas++;
+                
+        if (typeof CONFIG_ESTAIDA !== 'undefined') {
+                    clearInterval(intervalo);
+                    
+                    // Favicon dinamico
+            var link = document.createElement('link');
+            link.rel = 'icon';
+            link.type = 'image/png';
+            link.href = CONFIG_ESTAIDA.imagens.favicon;
+            document.head.appendChild(link);
+                    
+                    // Atualizar Schema.org com dados do config.js
+                    var schemaScript = document.getElementById('schema-org-data');
+                    if (schemaScript) {
+                        try {
+                            var schema = JSON.parse(schemaScript.textContent);
+                            schema.telephone = CONFIG_ESTAIDA.contato.telefone;
+                            schema.email = CONFIG_ESTAIDA.contato.email;
+                            schema.image = CONFIG_ESTAIDA.imagens.logo;
+                            schemaScript.textContent = JSON.stringify(schema, null, 2);
+                        } catch(e) {
+                            console.error('Erro ao atualizar Schema.org:', e);
+                        }
+                    }
+                    
+                    // Atualizar links do WhatsApp
+                    var whatsappMsg = encodeURIComponent('Olá! Gostaria de um orçamento para Farmácias em Porto Alegre');
+                    var whatsappUrl = 'https://wa.me/' + CONFIG_ESTAIDA.contato.whatsapp + '?text=' + whatsappMsg;
+                    
+                    var btnWhatsappHero = document.getElementById('btn-whatsapp-hero');
+                    if (btnWhatsappHero) btnWhatsappHero.href = whatsappUrl;
+                    
+                    var btnWhatsappCta = document.getElementById('btn-whatsapp-cta');
+                    if (btnWhatsappCta) btnWhatsappCta.href = whatsappUrl;
+                    
+                    // Atualizar botão flutuante WhatsApp
+                    var btnWhatsappFloat = document.getElementById('btn-whatsapp-float');
+                    if (btnWhatsappFloat) btnWhatsappFloat.href = whatsappUrl;
+                    
+                    // Atualizar Footer
+                    var footerWhatsapp = document.getElementById('footer-whatsapp');
+                    if (footerWhatsapp) {
+                        footerWhatsapp.textContent = CONFIG_ESTAIDA.contato.whatsappFormatado || CONFIG_ESTAIDA.contato.telefone;
+                    }
+                    
+                    var footerEmail = document.getElementById('footer-email');
+                    if (footerEmail) {
+                        footerEmail.textContent = CONFIG_ESTAIDA.contato.email;
+                    }
+                } else if (tentativas >= 10) {
+                    clearInterval(intervalo);
+                    // Fallback: usar valores padrão se config.js não carregar
+                    var footerWhatsapp = document.getElementById('footer-whatsapp');
+                    if (footerWhatsapp) footerWhatsapp.textContent = '(11) 99999-9999';
+                    
+                    var footerEmail = document.getElementById('footer-email');
+                    if (footerEmail) footerEmail.textContent = 'contato@estaiada.site';
+                    
+                    console.warn('Config.js não carregou. Usando valores padrão.');
+                }
+            }, 100);
+        }
+        
+        // Executar quando DOM estiver pronto
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', atualizarDadosConfig);
+        } else {
+            atualizarDadosConfig();
+        }
+    </script>
+    
+    <style>
+        :root {
+            --primary-color: #0038e0;
+            --secondary-color: #c7f14a;
+            --dark-color: #0a0a0a;
+            --light-color: #f8f9fa;
+            --text-color: #333;
+            --text-light: #6c757d;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; color: var(--text-color); line-height: 1.6; overflow-x: hidden; }
+        .navbar { background: rgba(255, 255, 255, 0.98); backdrop-filter: blur(10px); box-shadow: 0 2px 20px rgba(0, 0, 0, 0.05); padding: 1rem 0; position: sticky; top: 0; z-index: 1000; }
+        .navbar-brand img { height: 45px; filter: brightness(0); }
+        .nav-link { font-weight: 500; color: var(--text-color) !important; margin: 0 1rem; transition: color 0.3s; }
+        .nav-link:hover { color: var(--primary-color) !important; }
+        .btn-primary-custom { background: var(--primary-color); color: white; border: none; padding: 0.75rem 2rem; border-radius: 50px; font-weight: 600; transition: all 0.3s; }
+        .btn-primary-custom:hover { background: #0041ff; transform: translateY(-2px); box-shadow: 0 10px 30px rgba(0, 56, 224, 0.3); }
+        .hero-section { background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 100%); padding: 120px 0 80px; position: relative; overflow: hidden; }
+        .hero-section h1 { font-size: 3.5rem; font-weight: 800; color: white; margin-bottom: 1.5rem; line-height: 1.2; }
+        .hero-section .highlight { color: var(--secondary-color); }
+        .hero-section .lead { font-size: 1.25rem; color: rgba(255, 255, 255, 0.8); margin-bottom: 2rem; }
+        .service-card { background: white; border-radius: 20px; padding: 2.5rem; height: 100%; transition: all 0.3s; border: 2px solid transparent; box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05); }
+        .service-card:hover { transform: translateY(-10px); border-color: var(--primary-color); box-shadow: 0 15px 40px rgba(0, 56, 224, 0.15); }
+        .service-icon { width: 70px; height: 70px; background: linear-gradient(135deg, var(--primary-color), #0041ff); border-radius: 18px; display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem; }
+        .service-card h3 { font-size: 1.5rem; font-weight: 700; margin-bottom: 1rem; }
+        .feature-list { list-style: none; padding: 0; }
+        .feature-list li { padding: 1rem 0; border-bottom: 1px solid #e9ecef; display: flex; align-items: center; }
+        .feature-list li::before { content: '✓'; color: var(--secondary-color); font-weight: 900; font-size: 1.5rem; margin-right: 1rem; background: rgba(199, 241, 74, 0.1); width: 35px; height: 35px; display: flex; align-items: center; justify-content: center; border-radius: 8px; }
+        .cta-section { background: linear-gradient(135deg, var(--primary-color), #0041ff); padding: 80px 0; text-align: center; color: white; }
+        .cta-section h2 { font-size: 3rem; font-weight: 800; margin-bottom: 1.5rem; }
+        .btn-secondary-custom { background: var(--secondary-color); color: var(--dark-color); border: none; padding: 1rem 3rem; border-radius: 50px; font-weight: 700; font-size: 1.1rem; }
+        .btn-secondary-custom:hover { background: #d4ff5e; transform: translateY(-3px); }
+        .related-services { padding: 60px 0; background: #f8f9fa; }
+        .related-link { 
+            display: inline-block; 
+            padding: 0.65rem 1.5rem; 
+            margin: 0.4rem;
+            color: var(--primary-color); 
+            background: white;
+            text-decoration: none; 
+            transition: all 0.3s; 
+            font-weight: 500;
+            border: 2px solid var(--primary-color);
+            border-radius: 50px;
+            font-size: 0.95rem;
+        }
+        .related-link:hover { 
+            background: var(--primary-color);
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0, 56, 224, 0.25);
+        }
+        .footer { background: var(--dark-color); color: rgba(255, 255, 255, 0.7); padding: 60px 0 30px; }
+        .footer h5 { color: white; font-weight: 700; margin-bottom: 1.5rem; }
+        .footer a { color: rgba(255, 255, 255, 0.7); text-decoration: none; }
+        .footer a:hover { color: var(--secondary-color); }
+        /* ═══════════════════════════════════════════════════════════
+           📱 OTIMIZAÇÕES MOBILE-FIRST
+           ═══════════════════════════════════════════════════════════ */
+        
+        /* Navbar Mobile */
+        @media (max-width: 991px) {
+            .navbar { padding: 0.75rem 0; }
+            .navbar-brand img { height: 40px; }
+            .navbar-toggler { border: none; padding: 0.5rem; }
+            .navbar-toggler:focus { box-shadow: none; }
+            .navbar-collapse { margin-top: 1rem; padding-top: 1rem; border-top: 1px solid rgba(0,0,0,0.1); }
+            .nav-link { margin: 0.5rem 0; padding: 0.75rem 1rem !important; }
+            .nav-item.ms-3 { margin-left: 0 !important; margin-top: 0.5rem; }
+            .btn-primary-custom { width: 100%; text-align: center; padding: 0.875rem 1.5rem; }
+        }
+        
+        /* Hero Section Mobile */
+        @media (max-width: 768px) {
+            .hero-section { padding: 80px 0 50px; }
+            .hero-section h1 { font-size: 2rem; line-height: 1.3; margin-bottom: 1rem; }
+            .hero-section .lead { font-size: 1rem; margin-bottom: 1.5rem; }
+            .btn-primary-custom.btn-lg { padding: 1rem 2rem; font-size: 1rem; width: 100%; max-width: 100%; }
+        }
+        
+        @media (max-width: 576px) {
+            .hero-section { padding: 60px 0 40px; }
+            .hero-section h1 { font-size: 1.75rem; }
+            .hero-section .lead { font-size: 0.95rem; }
+        }
+        
+        /* Service Cards Mobile */
+        @media (max-width: 768px) {
+            .service-card { padding: 1.25rem; margin-bottom: 1rem; }
+            .service-icon { width: 50px; height: 50px; margin-bottom: 0.75rem; }
+            .service-icon svg { width: 28px; height: 28px; }
+            .service-card h3 { font-size: 1.1rem; margin-bottom: 0.5rem; }
+            .service-card p { font-size: 0.85rem; margin-bottom: 0; }
+        }
+        
+        /* Feature List Mobile */
+        @media (max-width: 768px) {
+            .feature-list li { padding: 0.75rem 0; font-size: 0.95rem; }
+            .feature-list li::before { width: 30px; height: 30px; font-size: 1.25rem; margin-right: 0.75rem; }
+        }
+        
+        /* CTA Section Mobile */
+        @media (max-width: 768px) {
+            .cta-section { padding: 50px 0; }
+            .cta-section h2 { font-size: 2rem; margin-bottom: 1rem; }
+            .cta-section p { font-size: 1rem; margin-bottom: 1.5rem; }
+            .btn-secondary-custom.btn-lg { padding: 1rem 2rem; font-size: 1rem; width: 100%; max-width: 100%; }
+        }
+        
+        @media (max-width: 576px) {
+            .cta-section h2 { font-size: 1.75rem; }
+        }
+        
+        /* Related Services Mobile */
+        @media (max-width: 768px) {
+            .related-services { padding: 40px 0; }
+            .related-services h2 { font-size: 1.75rem; margin-bottom: 2rem; }
+            .related-services h4 { font-size: 1.25rem; margin-bottom: 1rem; }
+            .related-services .text-center {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 0.5rem;
+            }
+            .related-link { 
+                padding: 0.75rem 1.25rem; 
+                margin: 0;
+                font-size: 0.9rem;
+                min-height: 44px; /* Touch target mínimo */
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                width: calc(50% - 0.25rem);
+                flex: 0 0 calc(50% - 0.25rem);
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .related-link { 
+                padding: 0.7rem 1rem; 
+                font-size: 0.85rem;
+                width: calc(50% - 0.25rem);
+                flex: 0 0 calc(50% - 0.25rem);
+            }
+        }
+        
+        /* Footer Mobile */
+        @media (max-width: 768px) {
+            .footer { padding: 40px 0 20px; }
+            .footer .col-md-4 { margin-bottom: 2rem; }
+            .footer h5 { font-size: 1.25rem; margin-bottom: 1rem; }
+            .footer p, .footer a { font-size: 0.9rem; }
+        }
+        
+        /* Sections Mobile */
+        @media (max-width: 768px) {
+            section.py-5 { padding: 3rem 0 !important; }
+            section.bg-light { padding: 3rem 0 !important; }
+            .container { padding-left: 1rem; padding-right: 1rem; }
+        }
+        
+        /* Text Mobile */
+        @media (max-width: 768px) {
+            h2 { font-size: 1.75rem; }
+            h3 { font-size: 1.5rem; }
+            p.lead { font-size: 1.1rem; }
+        }
+        
+        /* Botão WhatsApp Flutuante */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 9999;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            animation: pulse-whatsapp 2s infinite;
+        }
+        .whatsapp-float a {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            background: #25D366;
+            color: white;
+            padding: 16px 24px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 16px;
+            box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+            transition: all 0.3s;
+        }
+        .whatsapp-float a:hover {
+            background: #20BA5A;
+            transform: scale(1.05);
+            box-shadow: 0 6px 30px rgba(37, 211, 102, 0.6);
+        }
+        .whatsapp-float .whatsapp-icon {
+            width: 32px;
+            height: 32px;
+            background: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+        .whatsapp-float .whatsapp-icon img {
+            width: 20px;
+            height: 20px;
+            object-fit: contain;
+            display: block;
+        }
+        .whatsapp-float .online-badge {
+            background: #20BA5A;
+            color: white;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            white-space: nowrap;
+            animation: blink-online 2s infinite;
+        }
+        @keyframes pulse-whatsapp {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        @keyframes blink-online {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
+        }
+        /* WhatsApp Mobile - Otimizado para Touch */
+        @media (max-width: 768px) {
+            .whatsapp-float {
+                bottom: 20px;
+                right: 20px;
+                left: auto;
+            }
+            .whatsapp-float a {
+                padding: 16px 20px;
+                font-size: 15px;
+                min-width: 56px; /* Touch target mínimo */
+                min-height: 56px;
+                box-shadow: 0 6px 25px rgba(37, 211, 102, 0.5);
+            }
+            .whatsapp-float .whatsapp-icon {
+                width: 36px;
+                height: 36px;
+            }
+            .whatsapp-float .whatsapp-icon img {
+                width: 22px;
+                height: 22px;
+            }
+            .whatsapp-float .online-badge {
+                display: none;
+            }
+            .whatsapp-float span:not(.online-badge) {
+                display: none; /* Esconde "Fale Conosco" no mobile, só ícone */
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .whatsapp-float {
+                bottom: 15px;
+                right: 15px;
+            }
+            .whatsapp-float a {
+                padding: 14px 18px;
+            }
+        }
+        
+        /* Melhorias de Performance Mobile */
+        @media (max-width: 768px) {
+            * { -webkit-tap-highlight-color: rgba(37, 211, 102, 0.2); }
+            .service-card:hover { transform: none; } /* Remove hover no mobile */
+            .related-link:hover { transform: none; } /* Remove hover no mobile */
+        }
+        
+        /* Prevenir zoom em inputs (iOS) */
+        @media (max-width: 768px) {
+            input, textarea, select { font-size: 16px !important; }
+        }
+        
+        /* Scroll suave mobile */
+        @media (max-width: 768px) {
+            html { scroll-behavior: smooth; -webkit-overflow-scrolling: touch; }
+        }
+        
+        /* ═══════════════════════════════════════════════════════════
+           🔗 REDES SOCIAIS
+           ═══════════════════════════════════════════════════════════ */
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+        .social-link {
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: rgba(255, 255, 255, 0.7);
+            transition: all 0.3s;
+            text-decoration: none;
+        }
+        .social-link:hover {
+            background: var(--secondary-color);
+            color: var(--dark-color);
+            transform: translateY(-3px);
+        }
+        .social-link svg {
+            width: 20px;
+            height: 20px;
+        }
+        
+        /* ═══════════════════════════════════════════════════════════
+           ⭐ DEPOIMENTOS
+           ═══════════════════════════════════════════════════════════ */
+        .depoimentos-section {
+            background: white;
+        }
+        .rating-overview {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .stars-display .stars {
+            font-size: 2rem;
+            color: #FFD700;
+            letter-spacing: 0.2rem;
+        }
+        .rating-text {
+            font-size: 1.1rem;
+            color: var(--text-color);
+            margin: 0;
+        }
+        .depoimento-card {
+            background: white;
+            border-radius: 15px;
+            padding: 1.5rem;
+            box-shadow: 0 3px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        .depoimento-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+        .depoimento-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+        .depoimento-foto {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--primary-color);
+        }
+        .depoimento-info h4 {
+            margin: 0;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--text-color);
+        }
+        .depoimento-info .depoimento-data {
+            font-size: 0.85rem;
+            color: var(--text-light);
+            margin: 0;
+        }
+        .depoimento-estrelas {
+            color: #FFD700;
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
+        }
+        .depoimento-texto {
+            color: var(--text-color);
+            line-height: 1.6;
+            flex-grow: 1;
+        }
+        
+        /* ═══════════════════════════════════════════════════════════
+           ❓ FAQ (ACCORDION)
+           ═══════════════════════════════════════════════════════════ */
+        .faq-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        .faq-item {
+            background: white;
+            border-radius: 10px;
+            margin-bottom: 1rem;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            overflow: hidden;
+        }
+        .faq-question {
+            padding: 1.5rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            font-size: 1.1rem;
+            color: var(--text-color);
+            transition: all 0.3s;
+            user-select: none;
+        }
+        .faq-question:hover {
+            background: #f8f9fa;
+            color: var(--primary-color);
+        }
+        .faq-question.active {
+            color: var(--primary-color);
+        }
+        .faq-icon {
+            width: 24px;
+            height: 24px;
+            transition: transform 0.3s;
+            flex-shrink: 0;
+            margin-left: 1rem;
+        }
+        .faq-question.active .faq-icon {
+            transform: rotate(180deg);
+        }
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+            padding: 0 1.5rem;
+        }
+        .faq-answer.active {
+            max-height: 1000px;
+            padding: 0 1.5rem 1.5rem;
+        }
+        .faq-answer p {
+            margin-bottom: 1rem;
+            color: var(--text-color);
+            line-height: 1.7;
+        }
+        .faq-answer ul, .faq-answer ol {
+            margin-left: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        .faq-answer li {
+            margin-bottom: 0.5rem;
+            color: var(--text-color);
+        }
+        
+        /* Mobile - Depoimentos e FAQ */
+        @media (max-width: 768px) {
+            .depoimento-card {
+                padding: 1.25rem;
+            }
+            .depoimento-foto {
+                width: 50px;
+                height: 50px;
+            }
+            .faq-question {
+                padding: 1.25rem;
+                font-size: 1rem;
+            }
+            .faq-answer.active {
+                padding: 0 1.25rem 1.25rem;
+            }
+            .social-links {
+                gap: 0.75rem;
+            }
+            .social-link {
+                width: 36px;
+                height: 36px;
+            }
+        }
+    </style>
+</head>
+<body>
+    
+    <nav class="navbar navbar-expand-lg">
+        <div class="container">
+            <a class="navbar-brand" href="../index.html" aria-label="ESTAIDA - Agência Digital - Voltar para página inicial"><img src="../logo.png" alt="ESTAIDA - Agência Digital especializada em criação de sites profissionais e marketing digital" width="150" height="45" loading="eager"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-label="Abrir menu de navegação" aria-expanded="false" aria-controls="navbarNav">
+                <span class="navbar-toggler-icon" aria-hidden="true"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav align-items-center">
+                    <li class="nav-item"><a class="nav-link" href="../index.html" title="Voltar para página inicial" aria-label="Voltar para página inicial da ESTAIDA">Início</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#servicos" title="Ver nossos serviços" aria-label="Ir para seção de serviços">Serviços</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#orcamento" title="Solicitar orçamento" aria-label="Ir para seção de orçamento">Contato</a></li>
+                    <li class="nav-item ms-3"><a href="#orcamento" class="btn btn-primary-custom" title="Solicitar orçamento" aria-label="Solicitar orçamento grátis">Orçamento</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    
+    <section class="hero-section">
+        <div class="container">
+            <h1>Criação de Sites <span class="highlight">Profissionais</span> para Farmácias em Porto Alegre</h1>
+            <p class="lead">Desenvolvemos sites modernos, otimizados para Google e com alta performance. Transforme sua presença digital.</p>
+            <a href="#" class="btn btn-primary-custom btn-lg" id="btn-whatsapp-hero" target="_blank" rel="noopener noreferrer" aria-label="Solicitar orçamento grátis para criação de site para Farmácias em Porto Alegre via WhatsApp" title="Solicitar orçamento grátis no WhatsApp">Solicitar Orçamento Grátis</a>
+        </div>
+    </section>
+    
+    <section class="py-5" id="servicos">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2>Por que Escolher a ESTAIDA em Porto Alegre?</h2>
+                <p class="lead">Especialistas em criar sites que geram resultados reais</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-6 col-md-6 col-lg-3">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <svg width="35" height="35" fill="white" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                        </div>
+                        <h3>SEO Otimizado</h3>
+                        <p>Sites que aparecem no Google</p>
+                    </div>
+                </div>
+                <div class="col-6 col-md-6 col-lg-3">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <svg width="35" height="35" fill="white" viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM9 17H7v-7h2v7zm4 0h-2V7h2v10zm4 0h-2v-4h2v4z"/></svg>
+                        </div>
+                        <h3>Alta Performance</h3>
+                        <p>Velocidade máxima em todos os dispositivos</p>
+                    </div>
+                </div>
+                <div class="col-6 col-md-6 col-lg-3">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <svg width="35" height="35" fill="white" viewBox="0 0 24 24"><path d="M17 1.01L7 1c-1.1 0-2 .9-2 2v18c0 1.1.9 2 2 2h10c1.1 0 2-.9 2-2V3c0-1.1-.9-1.99-2-1.99zM17 19H7V5h10v14z"/></svg>
+                        </div>
+                        <h3>100% Responsivo</h3>
+                        <p>Perfeito em celulares, tablets e desktops</p>
+                    </div>
+                </div>
+                <div class="col-6 col-md-6 col-lg-3">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <svg width="35" height="35" fill="white" viewBox="0 0 24 24"><path d="M11.8 10.9c-2.27-.59-3-1.2-3-2.15 0-1.09 1.01-1.85 2.7-1.85 1.78 0 2.44.85 2.5 2.1h2.21c-.07-1.72-1.12-3.3-3.21-3.81V3h-3v2.16c-1.94.42-3.5 1.68-3.5 3.61 0 2.31 1.91 3.46 4.7 4.13 2.5.6 3 1.48 3 2.41 0 .69-.49 1.79-2.7 1.79-2.06 0-2.87-.92-2.98-2.1h-2.2c.12 2.19 1.76 3.42 3.68 3.83V21h3v-2.15c1.95-.37 3.5-1.5 3.5-3.55 0-2.84-2.43-3.81-4.7-4.4z"/></svg>
+                        </div>
+                        <h3>Preço Ótimo</h3>
+                        <p>Melhor custo-benefício do mercado</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="py-5 bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <h2>Sites para Farmácias em Porto Alegre</h2>
+                    <p>Criamos sites profissionais especializados para Farmácias com todas as funcionalidades necessárias.</p>
+                    <ul class="feature-list">
+                        <li>Design profissional e moderno</li>
+                        <li>Otimizado para Google (SEO)</li>
+                        <li>Responsivo (mobile-first)</li>
+                        <li>Velocidade ultrarrápida</li>
+                        <li>Integração WhatsApp</li>
+                        <li>Painel administrativo</li>
+                        <li>Certificado SSL incluso</li>
+                        <li>Suporte técnico</li>
+                    </ul>
+                </div>
+                <div class="col-lg-6">
+                    <h3>Vantagens Competitivas</h3>
+                    <p>Nossa experiência com Farmácias garante:</p>
+                    <ul class="feature-list">
+                        <li>Mais visibilidade online</li>
+                        <li>Geração de leads qualificados</li>
+                        <li>Aumento de conversões</li>
+                        <li>Credibilidade profissional</li>
+                        <li>Disponibilidade 24/7</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="cta-section" id="orcamento">
+        <div class="container">
+            <h2>Pronto para Ter um Site Profissional?</h2>
+            <p>Solicite orçamento gratuito. Resposta em até 24h.</p>
+            <a href="#" class="btn btn-secondary-custom btn-lg" id="btn-whatsapp-cta" target="_blank" rel="noopener noreferrer" aria-label="Solicitar orçamento para criação de site para Farmácias em Porto Alegre no WhatsApp" title="Solicitar orçamento no WhatsApp">Solicitar no WhatsApp</a>
+        </div>
+    </section>
+    
+    <section class="related-services">
+        <div class="container">
+            <h2 class="text-center mb-5">Veja Também Nossos Serviços em Porto Alegre RS</h2>
+            
+            <div class="mb-5">
+                <h4 class="mb-3" style="color: var(--primary-color); font-weight: 700;">🌐 Criação de Sites & Desenvolvimento Web</h4>
+                <div class="text-center">
+                    <a href="criacao-sites.html" class="related-link" title="Criação de sites para Criação de Sites em Porto Alegre" aria-label="Ver página de criação de sites para Criação de Sites em Porto Alegre">Criação de Sites</a>
+                    <a href="desenvolvimento-web.html" class="related-link" title="Criação de sites para Desenvolvimento Web em Porto Alegre" aria-label="Ver página de criação de sites para Desenvolvimento Web em Porto Alegre">Desenvolvimento Web</a>
+                    <a href="sites-institucionais.html" class="related-link" title="Criação de sites para Sites Institucionais em Porto Alegre" aria-label="Ver página de criação de sites para Sites Institucionais em Porto Alegre">Sites Institucionais</a>
+                    <a href="sites-corporativos.html" class="related-link" title="Criação de sites para Sites Corporativos em Porto Alegre" aria-label="Ver página de criação de sites para Sites Corporativos em Porto Alegre">Sites Corporativos</a>
+                    <a href="sites-responsivos.html" class="related-link" title="Criação de sites para Sites Responsivos em Porto Alegre" aria-label="Ver página de criação de sites para Sites Responsivos em Porto Alegre">Sites Responsivos</a>
+                    <a href="sites-one-page.html" class="related-link" title="Criação de sites para Sites One Page em Porto Alegre" aria-label="Ver página de criação de sites para Sites One Page em Porto Alegre">Sites One Page</a>
+                    <a href="sites-wordpress.html" class="related-link" title="Criação de sites para Sites WordPress em Porto Alegre" aria-label="Ver página de criação de sites para Sites WordPress em Porto Alegre">Sites WordPress</a>
+                    <a href="sites-personalizados.html" class="related-link" title="Criação de sites para Sites Personalizados em Porto Alegre" aria-label="Ver página de criação de sites para Sites Personalizados em Porto Alegre">Sites Personalizados</a>
+                    <a href="redesign-sites.html" class="related-link" title="Criação de sites para Redesign de Sites em Porto Alegre" aria-label="Ver página de criação de sites para Redesign de Sites em Porto Alegre">Redesign de Sites</a>
+                    <a href="manutencao-sites.html" class="related-link" title="Criação de sites para Manutenção de Sites em Porto Alegre" aria-label="Ver página de criação de sites para Manutenção de Sites em Porto Alegre">Manutenção de Sites</a>
+                </div>
+            </div>
+            
+            <div class="mb-5">
+                <h4 class="mb-3" style="color: var(--primary-color); font-weight: 700;">🛒 E-commerce & Lojas Virtuais</h4>
+                <div class="text-center">
+                    <a href="loja-virtual.html" class="related-link" title="Criação de sites para Loja Virtual em Porto Alegre" aria-label="Ver página de criação de sites para Loja Virtual em Porto Alegre">Loja Virtual</a>
+                    <a href="e-commerce.html" class="related-link" title="Criação de sites para E-commerce em Porto Alegre" aria-label="Ver página de criação de sites para E-commerce em Porto Alegre">E-commerce</a>
+                    <a href="marketplace.html" class="related-link" title="Criação de sites para Marketplace em Porto Alegre" aria-label="Ver página de criação de sites para Marketplace em Porto Alegre">Marketplace</a>
+                    <a href="e-commerce-b2b.html" class="related-link" title="Criação de sites para E-commerce B2B em Porto Alegre" aria-label="Ver página de criação de sites para E-commerce B2B em Porto Alegre">E-commerce B2B</a>
+                    <a href="e-commerce-b2c.html" class="related-link" title="Criação de sites para E-commerce B2C em Porto Alegre" aria-label="Ver página de criação de sites para E-commerce B2C em Porto Alegre">E-commerce B2C</a>
+                </div>
+</div>
+            
+            <div class="mb-5">
+                <h4 class="mb-3" style="color: var(--primary-color); font-weight: 700;">📈 Marketing Digital & Tráfego Pago</h4>
+                <div class="text-center">
+                    <a href="landing-page.html" class="related-link" title="Criação de sites para Landing Page em Porto Alegre" aria-label="Ver página de criação de sites para Landing Page em Porto Alegre">Landing Page</a>
+                    <a href="pagina-vendas.html" class="related-link" title="Criação de sites para Página de Vendas em Porto Alegre" aria-label="Ver página de criação de sites para Página de Vendas em Porto Alegre">Página de Vendas</a>
+                    <a href="marketing-digital.html" class="related-link" title="Criação de sites para Marketing Digital em Porto Alegre" aria-label="Ver página de criação de sites para Marketing Digital em Porto Alegre">Marketing Digital</a>
+                    <a href="google-ads.html" class="related-link" title="Criação de sites para Google Ads em Porto Alegre" aria-label="Ver página de criação de sites para Google Ads em Porto Alegre">Google Ads</a>
+                    <a href="facebook-ads.html" class="related-link" title="Criação de sites para Facebook Ads em Porto Alegre" aria-label="Ver página de criação de sites para Facebook Ads em Porto Alegre">Facebook Ads</a>
+                    <a href="instagram-ads.html" class="related-link" title="Criação de sites para Instagram Ads em Porto Alegre" aria-label="Ver página de criação de sites para Instagram Ads em Porto Alegre">Instagram Ads</a>
+                    <a href="trafego-pago.html" class="related-link" title="Criação de sites para Tráfego Pago em Porto Alegre" aria-label="Ver página de criação de sites para Tráfego Pago em Porto Alegre">Tráfego Pago</a>
+                    <a href="gestao-redes-sociais.html" class="related-link" title="Criação de sites para Gestão de Redes Sociais em Porto Alegre" aria-label="Ver página de criação de sites para Gestão de Redes Sociais em Porto Alegre">Gestão de Redes Sociais</a>
+                    <a href="social-media.html" class="related-link" title="Criação de sites para Social Media em Porto Alegre" aria-label="Ver página de criação de sites para Social Media em Porto Alegre">Social Media</a>
+                    <a href="inbound-marketing.html" class="related-link" title="Criação de sites para Inbound Marketing em Porto Alegre" aria-label="Ver página de criação de sites para Inbound Marketing em Porto Alegre">Inbound Marketing</a>
+                    <a href="email-marketing.html" class="related-link" title="Criação de sites para Email Marketing em Porto Alegre" aria-label="Ver página de criação de sites para Email Marketing em Porto Alegre">Email Marketing</a>
+                    <a href="marketing-conteudo.html" class="related-link" title="Criação de sites para Marketing de Conteúdo em Porto Alegre" aria-label="Ver página de criação de sites para Marketing de Conteúdo em Porto Alegre">Marketing de Conteúdo</a>
+                    <a href="automacao-marketing.html" class="related-link" title="Criação de sites para Automação de Marketing em Porto Alegre" aria-label="Ver página de criação de sites para Automação de Marketing em Porto Alegre">Automação de Marketing</a>
+</div>
+</div>
+            
+            <div class="mb-5">
+                <h4 class="mb-3" style="color: var(--primary-color); font-weight: 700;">🔍 SEO & Otimização</h4>
+                <div class="text-center">
+                    <a href="seo.html" class="related-link" title="Criação de sites para SEO em Porto Alegre" aria-label="Ver página de criação de sites para SEO em Porto Alegre">SEO</a>
+                    <a href="consultoria-seo.html" class="related-link" title="Criação de sites para Consultoria SEO em Porto Alegre" aria-label="Ver página de criação de sites para Consultoria SEO em Porto Alegre">Consultoria SEO</a>
+                    <a href="seo-local.html" class="related-link" title="Criação de sites para SEO Local em Porto Alegre" aria-label="Ver página de criação de sites para SEO Local em Porto Alegre">SEO Local</a>
+                    <a href="auditoria-seo.html" class="related-link" title="Criação de sites para Auditoria SEO em Porto Alegre" aria-label="Ver página de criação de sites para Auditoria SEO em Porto Alegre">Auditoria SEO</a>
+                    <a href="link-building.html" class="related-link" title="Criação de sites para Link Building em Porto Alegre" aria-label="Ver página de criação de sites para Link Building em Porto Alegre">Link Building</a>
+                    <a href="seo-tecnico.html" class="related-link" title="Criação de sites para SEO Técnico em Porto Alegre" aria-label="Ver página de criação de sites para SEO Técnico em Porto Alegre">SEO Técnico</a>
+                    <a href="otimizacao-google.html" class="related-link" title="Criação de sites para Otimização para Google em Porto Alegre" aria-label="Ver página de criação de sites para Otimização para Google em Porto Alegre">Otimização para Google</a>
+</div>
+</div>
+            
+            <div class="mb-5">
+                <h4 class="mb-3" style="color: var(--primary-color); font-weight: 700;">🎨 Design & Branding</h4>
+                <div class="text-center">
+                    <a href="design-grafico.html" class="related-link" title="Criação de sites para Design Gráfico em Porto Alegre" aria-label="Ver página de criação de sites para Design Gráfico em Porto Alegre">Design Gráfico</a>
+                    <a href="identidade-visual.html" class="related-link" title="Criação de sites para Identidade Visual em Porto Alegre" aria-label="Ver página de criação de sites para Identidade Visual em Porto Alegre">Identidade Visual</a>
+                    <a href="criacao-logo.html" class="related-link" title="Criação de sites para Criação de Logo em Porto Alegre" aria-label="Ver página de criação de sites para Criação de Logo em Porto Alegre">Criação de Logo</a>
+                    <a href="branding.html" class="related-link" title="Criação de sites para Branding em Porto Alegre" aria-label="Ver página de criação de sites para Branding em Porto Alegre">Branding</a>
+                    <a href="ui-ux-design.html" class="related-link" title="Criação de sites para UI/UX Design em Porto Alegre" aria-label="Ver página de criação de sites para UI/UX Design em Porto Alegre">UI/UX Design</a>
+                    <a href="design-interfaces.html" class="related-link" title="Criação de sites para Design de Interfaces em Porto Alegre" aria-label="Ver página de criação de sites para Design de Interfaces em Porto Alegre">Design de Interfaces</a>
+</div>
+</div>
+            
+            <div class="mb-5">
+                <h4 class="mb-3" style="color: var(--primary-color); font-weight: 700;">📱 Aplicativos & Sistemas</h4>
+                <div class="text-center">
+                    <a href="aplicativos-mobile.html" class="related-link" title="Criação de sites para Aplicativos Mobile em Porto Alegre" aria-label="Ver página de criação de sites para Aplicativos Mobile em Porto Alegre">Aplicativos Mobile</a>
+                    <a href="app-android.html" class="related-link" title="Criação de sites para App Android em Porto Alegre" aria-label="Ver página de criação de sites para App Android em Porto Alegre">App Android</a>
+                    <a href="app-ios.html" class="related-link" title="Criação de sites para App iOS em Porto Alegre" aria-label="Ver página de criação de sites para App iOS em Porto Alegre">App iOS</a>
+                    <a href="aplicativo-hibrido.html" class="related-link" title="Criação de sites para Aplicativo Híbrido em Porto Alegre" aria-label="Ver página de criação de sites para Aplicativo Híbrido em Porto Alegre">Aplicativo Híbrido</a>
+                    <a href="pwa.html" class="related-link" title="Criação de sites para PWA em Porto Alegre" aria-label="Ver página de criação de sites para PWA em Porto Alegre">PWA</a>
+                    <a href="sistema-web.html" class="related-link" title="Criação de sites para Sistema Web em Porto Alegre" aria-label="Ver página de criação de sites para Sistema Web em Porto Alegre">Sistema Web</a>
+                    <a href="crm.html" class="related-link" title="Criação de sites para CRM em Porto Alegre" aria-label="Ver página de criação de sites para CRM em Porto Alegre">CRM</a>
+                    <a href="erp.html" class="related-link" title="Criação de sites para ERP em Porto Alegre" aria-label="Ver página de criação de sites para ERP em Porto Alegre">ERP</a>
+                    <a href="sistema-gestao.html" class="related-link" title="Criação de sites para Sistema de Gestão em Porto Alegre" aria-label="Ver página de criação de sites para Sistema de Gestão em Porto Alegre">Sistema de Gestão</a>
+                    <a href="plataforma-ead.html" class="related-link" title="Criação de sites para Plataforma EAD em Porto Alegre" aria-label="Ver página de criação de sites para Plataforma EAD em Porto Alegre">Plataforma EAD</a>
+</div>
+</div>
+            
+            <div class="mb-5">
+                <h4 class="mb-3" style="color: var(--primary-color); font-weight: 700;">💼 Sites por Segmento</h4>
+                <div class="text-center">
+                    <a href="medicos.html" class="related-link" title="Criação de sites para Médicos em Porto Alegre" aria-label="Ver página de criação de sites para Médicos em Porto Alegre">Médicos</a>
+                    <a href="dentistas.html" class="related-link" title="Criação de sites para Dentistas em Porto Alegre" aria-label="Ver página de criação de sites para Dentistas em Porto Alegre">Dentistas</a>
+                    <a href="clinicas-medicas.html" class="related-link" title="Criação de sites para Clínicas em Porto Alegre" aria-label="Ver página de criação de sites para Clínicas em Porto Alegre">Clínicas</a>
+                    <a href="advogados.html" class="related-link" title="Criação de sites para Advogados em Porto Alegre" aria-label="Ver página de criação de sites para Advogados em Porto Alegre">Advogados</a>
+                    <a href="contadores.html" class="related-link" title="Criação de sites para Contadores em Porto Alegre" aria-label="Ver página de criação de sites para Contadores em Porto Alegre">Contadores</a>
+                    <a href="arquitetos.html" class="related-link" title="Criação de sites para Arquitetos em Porto Alegre" aria-label="Ver página de criação de sites para Arquitetos em Porto Alegre">Arquitetos</a>
+                    <a href="restaurantes.html" class="related-link" title="Criação de sites para Restaurantes em Porto Alegre" aria-label="Ver página de criação de sites para Restaurantes em Porto Alegre">Restaurantes</a>
+                    <a href="pizzarias.html" class="related-link" title="Criação de sites para Pizzarias em Porto Alegre" aria-label="Ver página de criação de sites para Pizzarias em Porto Alegre">Pizzarias</a>
+                    <a href="bares.html" class="related-link" title="Criação de sites para Bares em Porto Alegre" aria-label="Ver página de criação de sites para Bares em Porto Alegre">Bares</a>
+                    <a href="cafeterias.html" class="related-link" title="Criação de sites para Cafeterias em Porto Alegre" aria-label="Ver página de criação de sites para Cafeterias em Porto Alegre">Cafeterias</a>
+                    <a href="hoteis.html" class="related-link" title="Criação de sites para Hotéis em Porto Alegre" aria-label="Ver página de criação de sites para Hotéis em Porto Alegre">Hotéis</a>
+                    <a href="escolas.html" class="related-link" title="Criação de sites para Escolas em Porto Alegre" aria-label="Ver página de criação de sites para Escolas em Porto Alegre">Escolas</a>
+                    <a href="academias.html" class="related-link" title="Criação de sites para Academias em Porto Alegre" aria-label="Ver página de criação de sites para Academias em Porto Alegre">Academias</a>
+</div>
+</div>
+            
+        </div>
+    </section>
+    
+    <!-- Seção Depoimentos -->
+    <section class="depoimentos-section py-5">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2>Sabe por que escolher a ESTAIDA?</h2>
+                <p class="lead">Veja o que dizem nossos clientes e entenda por que somos a escolha certa para criar, evoluir e cuidar do seu site.</p>
+                <div class="rating-overview mb-4">
+                    <div class="stars-display">
+                        <span class="stars">★★★★★</span>
+                    </div>
+                    <p class="rating-text"><strong>Avaliações</strong> <span id="rating-value">5</span> <span id="rating-count">(226)</span></p>
+                </div>
+            </div>
+            <div class="row g-4" id="depoimentos-container">
+                <!-- Depoimentos serão carregados dinamicamente do config.js -->
+            </div>
+        </div>
+    </section>
+    
+    <!-- Seção FAQ -->
+    <section class="faq-section py-5 bg-light">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2>PERGUNTAS FREQUENTES</h2>
+            </div>
+            <div class="faq-container" id="faq-container">
+                <!-- FAQ será carregado dinamicamente do config.js -->
+</div>
+        </div>
+    </section>
+    
+    <footer class="footer" id="contato">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h5>ESTAIDA</h5>
+                    <p>Agência especializada em criação de sites profissionais.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link" id="social-facebook" target="_blank" rel="noopener noreferrer" aria-label="Siga-nos no Facebook" title="Facebook">
+                            <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                        </a>
+                        <a href="#" class="social-link" id="social-instagram" target="_blank" rel="noopener noreferrer" aria-label="Siga-nos no Instagram" title="Instagram">
+                            <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                        </a>
+                        <a href="#" class="social-link" id="social-linkedin" target="_blank" rel="noopener noreferrer" aria-label="Siga-nos no LinkedIn" title="LinkedIn">
+                            <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <h5>Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="../index.html" title="Voltar para página inicial" aria-label="Voltar para página inicial da ESTAIDA">Início</a></li>
+                        <li><a href="#servicos" title="Ver nossos serviços" aria-label="Ir para seção de serviços">Serviços</a></li>
+                        <li><a href="#orcamento" title="Solicitar orçamento" aria-label="Ir para seção de orçamento">Contato</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h5>Contato</h5>
+                    <p id="footer-contato">
+                        <strong>WhatsApp:</strong> <span id="footer-whatsapp">(11) 99999-9999</span><br>
+                        <strong>Email:</strong> <span id="footer-email">contato@estaiada.site</span>
+                    </p>
+                </div>
+            </div>
+            <div class="text-center mt-4 pt-4" style="border-top: 1px solid rgba(255,255,255,0.1)">
+                <p>&copy; 2025 ESTAIDA. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Botão WhatsApp Flutuante -->
+    <div class="whatsapp-float">
+        <a href="#" id="btn-whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Fale conosco no WhatsApp - Estamos online" title="Fale conosco no WhatsApp">
+            <div class="whatsapp-icon">
+                <img src="../whatsapp.png" alt="Ícone do WhatsApp - Fale conosco" width="20" height="20" loading="lazy">
+            </div>
+            <span>Fale Conosco</span>
+            <span class="online-badge" aria-label="Status: Estamos online">Estamos online</span>
+        </a>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Smooth Scroll para links âncora -->
+    <script>
+        // Smooth scroll para todos os links âncora
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                var href = this.getAttribute('href');
+                // Ignorar links vazios ou apenas #
+                if (href === '#' || href === '') {
+                    return;
+                }
+                
+                var target = document.querySelector(href);
+                if (target) {
+                    e.preventDefault();
+                    var offsetTop = target.offsetTop - 80; // Offset para navbar fixa
+                    window.scrollTo({
+                        top: offsetTop,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Fechar menu mobile se estiver aberto
+                    var navbarCollapse = document.querySelector('.navbar-collapse');
+                    if (navbarCollapse && navbarCollapse.classList.contains('show')) {
+                        var bsCollapse = new bootstrap.Collapse(navbarCollapse, {
+                            toggle: false
+                        });
+                        bsCollapse.hide();
+                    }
+                }
+            });
+        });
+    </script>
+    
+    <!-- Carregar Depoimentos, FAQ e Redes Sociais do config.js -->
+    <script>
+        function carregarConteudoDinamico() {
+            if (typeof CONFIG_ESTAIDA === 'undefined') {
+                setTimeout(carregarConteudoDinamico, 100);
+                return;
+            }
+            
+            // Carregar Redes Sociais
+            var socialFacebook = document.getElementById('social-facebook');
+            var socialInstagram = document.getElementById('social-instagram');
+            var socialLinkedin = document.getElementById('social-linkedin');
+            
+            if (socialFacebook && CONFIG_ESTAIDA.redesSociais.facebook) {
+                socialFacebook.href = CONFIG_ESTAIDA.redesSociais.facebook;
+            }
+            if (socialInstagram && CONFIG_ESTAIDA.redesSociais.instagram) {
+                socialInstagram.href = CONFIG_ESTAIDA.redesSociais.instagram;
+            }
+            if (socialLinkedin && CONFIG_ESTAIDA.redesSociais.linkedin) {
+                socialLinkedin.href = CONFIG_ESTAIDA.redesSociais.linkedin;
+            }
+            
+            // Carregar Depoimentos
+            var depoimentosContainer = document.getElementById('depoimentos-container');
+            if (depoimentosContainer && CONFIG_ESTAIDA.depoimentos && CONFIG_ESTAIDA.depoimentos.length > 0) {
+                var htmlDepoimentos = '';
+                CONFIG_ESTAIDA.depoimentos.slice(0, 6).forEach(function(depoimento) {
+                    var estrelas = '★'.repeat(depoimento.estrelas || 5);
+                    htmlDepoimentos += '<div class="col-md-6 col-lg-4"><div class="depoimento-card"><div class="depoimento-header"><img src="' + depoimento.foto + '" alt="' + depoimento.nome + '" class="depoimento-foto" loading="lazy" onerror="this.src=\'https://via.placeholder.com/60?text=' + depoimento.nome.charAt(0) + '\'"><div class="depoimento-info"><h4>' + depoimento.nome + '</h4><p class="depoimento-data">' + depoimento.data + '</p></div></div><div class="depoimento-estrelas">' + estrelas + '</div><p class="depoimento-texto">' + depoimento.texto + '</p></div></div>';
+                });
+                depoimentosContainer.innerHTML = htmlDepoimentos;
+                
+                // Atualizar rating geral
+                var ratingValue = document.getElementById('rating-value');
+                var ratingCount = document.getElementById('rating-count');
+                if (ratingValue) ratingValue.textContent = '5';
+                if (ratingCount) ratingCount.textContent = '(' + CONFIG_ESTAIDA.depoimentos.length + ')';
+            }
+            
+            // Carregar FAQ
+            var faqContainer = document.getElementById('faq-container');
+            if (faqContainer && CONFIG_ESTAIDA.faq && CONFIG_ESTAIDA.faq.length > 0) {
+                var htmlFaq = '';
+                CONFIG_ESTAIDA.faq.forEach(function(item, index) {
+                    htmlFaq += '<div class="faq-item"><div class="faq-question" onclick="toggleFaq(' + index + ')"><span>' + item.pergunta + '</span><svg class="faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></div><div class="faq-answer" id="faq-answer-' + index + '">' + item.resposta + '</div></div>';
+                });
+                faqContainer.innerHTML = htmlFaq;
+            }
+        }
+        
+        // Função para toggle do FAQ
+        function toggleFaq(index) {
+            var answer = document.getElementById('faq-answer-' + index);
+            var question = answer.previousElementSibling;
+            
+            if (answer.classList.contains('active')) {
+                answer.classList.remove('active');
+                question.classList.remove('active');
+            } else {
+                // Fechar outros FAQs abertos
+                document.querySelectorAll('.faq-answer.active').forEach(function(item) {
+                    item.classList.remove('active');
+                    item.previousElementSibling.classList.remove('active');
+                });
+                // Abrir o selecionado
+                answer.classList.add('active');
+                question.classList.add('active');
+            }
+        }
+        
+        // Executar quando DOM estiver pronto
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', carregarConteudoDinamico);
+        } else {
+            carregarConteudoDinamico();
+        }
+    </script>
+    
+    <!-- Google Analytics (carregado do config.js) -->
+    <script>
+        if (typeof CONFIG_ESTAIDA !== 'undefined' && CONFIG_ESTAIDA.tecnico.googleAnalyticsId && CONFIG_ESTAIDA.tecnico.googleAnalyticsId !== 'G-XXXXXXXXXX') {
+            var gaId = CONFIG_ESTAIDA.tecnico.googleAnalyticsId;
+            // Google Analytics 4
+            var script1 = document.createElement('script');
+            script1.async = true;
+            script1.src = 'https://www.googletagmanager.com/gtag/js?id=' + gaId;
+            document.head.appendChild(script1);
+            
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', gaId);
+        }
+    </script>
+</body>
+</html>
